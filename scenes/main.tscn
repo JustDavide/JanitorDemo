@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://1l04mvg80ge5"]
+
+[ext_resource type="PackedScene" uid="uid://bgfdjuhf7oacr" path="res://scenes/Player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://deu44euh4qkt8" path="res://assets/trash/bunch_of_cans.tscn" id="2_0wfyh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u77a"]
+sky_top_color = Color(0, 0.3943951, 0.75831825, 1)
+sky_horizon_color = Color(0.4893413, 0.58505285, 0.6735428, 1)
+ground_bottom_color = Color(0.20019478, 0.18864599, 0.17868257, 1)
+ground_horizon_color = Color(0.4893413, 0.58505285, 0.6735428, 1)
+
+[sub_resource type="Sky" id="Sky_jjgbg"]
+sky_material = SubResource("ProceduralSkyMaterial_7u77a")
+
+[sub_resource type="Environment" id="Environment_bo1nx"]
+background_mode = 2
+sky = SubResource("Sky_jjgbg")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7u77a"]
+albedo_color = Color(0.24840015, 0.24840018, 0.24840015, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjgbg"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
+albedo_color = Color(1, 0.44924814, 0.79438007, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gbba"]
+albedo_color = Color(1.9492954e-06, 0.59182423, 9.62615e-07, 1)
+
+[node name="Main" type="Node3D" unique_id=708284144]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=346027744]
+environment = SubResource("Environment_bo1nx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=405938976]
+transform = Transform3D(0.1310133, -0.20904945, 0.9690892, 0.009248661, 0.97773, 0.20966303, -0.9913374, -0.018505877, 0.13002908, 0, 13.999184, 0)
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1764774185]
+transform = Transform3D(101.88585, 0, 0, 0, 1, 0, 0, 0, 38.702435, 0, 0, 7.347093)
+use_collision = true
+size = Vector3(1, 1, 2.6591797)
+material = SubResource("StandardMaterial3D_7u77a")
+
+[node name="WindowedWall" type="CSGBox3D" parent="." unique_id=425037725]
+transform = Transform3D(8.4104805, 0, 0, 0, 8.798983, 0, 0, 0, 1, 0.9345193, 5.082215, -16.245094)
+use_collision = true
+material = SubResource("StandardMaterial3D_jjgbg")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="WindowedWall" unique_id=1601457764]
+transform = Transform3D(0.9, 0, 0, 0, 0.0026827834, -0.79998296, 0, 0.41099128, 0.0052219625, -0.01746945, 0.009081364, 0.0811919)
+operation = 2
+radius = 0.22607422
+height = 3.8215027
+sides = 20
+
+[node name="Penis" type="CSGBox3D" parent="." unique_id=1529163051]
+transform = Transform3D(6.7188196, 0, 0, 0, 2.9081683, 0, 0, 0, 1, -0.46483052, 5.1471486, 25.135918)
+use_collision = true
+size = Vector3(1.6185913, 3.1641235, 1)
+material = SubResource("StandardMaterial3D_bo1nx")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Penis" unique_id=1028493271]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 1, 0.05267333, -0.89820766, 0)
+operation = 2
+size = Vector3(0.5506592, 1.4111938, 1)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Penis" unique_id=1224177889]
+transform = Transform3D(0.62628615, 0, 0, 0, 1.1134453, 0, 0, 0, 3.840881, 0.041620165, -0.3025837, -0.44552326)
+operation = 2
+radius = 0.6022808
+rings = 23
+
+[node name="Arch" type="CSGBox3D" parent="." unique_id=1985690340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.177185, 5.432341, 6.595701)
+use_collision = true
+size = Vector3(1, 9.981232, 12.832092)
+material = SubResource("StandardMaterial3D_8gbba")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Arch" unique_id=1103626281]
+transform = Transform3D(-0.9011801, -3.6874125, 0, 10.200058, -0.32578477, 0, 0, 0, 7.4574685, 0, -3.9079592, 0)
+operation = 2
+sides = 7
+
+[node name="Player" parent="." unique_id=1009793537 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1307507, 1.5, 2.9379852)
+SENS = 0.001
+
+[node name="BunchOfCans" parent="." unique_id=24624919 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7543001, 0.6543114, -0.5816083)
+script = null
+
+[node name="DebugCamera" type="Camera3D" parent="." unique_id=1474081982]
+transform = Transform3D(-0.99922913, -0.039173663, 0.002601901, -1.2880135e-08, 0.06627392, 0.99780154, -0.03925994, 0.9970322, -0.06622282, 1.4422541, 19.922709, 0)
