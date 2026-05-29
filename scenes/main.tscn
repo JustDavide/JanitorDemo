@@ -88,9 +88,8 @@ sides = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1307507, 1.5, 2.9379852)
 SENS = 0.001
 
-[node name="BunchOfCans" parent="." unique_id=24624919 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7543001, 0.6543114, -0.5816083)
-script = null
-
 [node name="DebugCamera" type="Camera3D" parent="." unique_id=1474081982]
 transform = Transform3D(-0.99922913, -0.039173663, 0.002601901, -1.2880135e-08, 0.06627392, 0.99780154, -0.03925994, 0.9970322, -0.06622282, 1.4422541, 19.922709, 0)
+
+[node name="BunchOfCans2" parent="." unique_id=24624919 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43894005, 0.70289147, -4.164132)

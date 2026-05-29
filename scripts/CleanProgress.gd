@@ -1,13 +1,9 @@
-extends PanelContainer
+extends Label
 
-@onready var property_container = $MarginContainer/VBoxContainer
-var property
-
-#TODO: CLEAN COUNTER
 func _ready() -> void:
-	Global.cleanProgress = self
+	Global.change_clean_count.connect(on_count_changed)
+	text = "Cleaned: 0/0"
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func on_count_changed(cleaned: int, total: int):
+	text = "Cleaned: %d/%d" % [cleaned, total]
+	

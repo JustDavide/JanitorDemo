@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cwssoo2wyi8b4" path="res://scripts/CharacterController.gd" id="1_rpqav"]
 [ext_resource type="Script" uid="uid://beyhpser1dmet" path="res://scripts/debug.gd" id="2_kyqiw"]
 [ext_resource type="Script" uid="uid://bdsvht8sbc852" path="res://scripts/clean.gd" id="3_mdl7e"]
-[ext_resource type="Script" uid="uid://d1xyi1hdunghj" path="res://scripts/CleanProgress.gd" id="5_qu4a1"]
+[ext_resource type="Script" uid="uid://b1avdn5xhfwhc" path="res://scripts/CleanProgress.gd" id="5_qu4a1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_q4ygm"]
 
@@ -83,13 +83,17 @@ offset_top = 670.0
 offset_right = 210.0
 offset_bottom = 710.0
 theme = SubResource("Theme_qu4a1")
-script = ExtResource("5_qu4a1")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/CleanedPanel" unique_id=1635709921]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CleanedPanel/MarginContainer" unique_id=1678175961]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/CleanedPanel/MarginContainer/VBoxContainer" unique_id=736822612]
+layout_mode = 2
+text = "PLACEHOLDER"
+script = ExtResource("5_qu4a1")
 
 [node name="CleanRayCast" type="RayCast3D" parent="." unique_id=1736759165]
 transform = Transform3D(1, 0, 0, 0, 1.4814045, 0, 0, 0, 0.9646299, 0, -0.16248244, 0.03970629)
