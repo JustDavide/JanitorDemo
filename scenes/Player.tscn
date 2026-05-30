@@ -36,6 +36,16 @@ MarginContainer/constants/margin_left = 2
 MarginContainer/constants/margin_top = 2
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_mdl7e")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3li8b"]
+bg_color = Color(0.6745098, 0.29411766, 0.21176471, 0.22352941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu4a1"]
+bg_color = Color(0, 0.63529414, 0.95686275, 0.6156863)
+
+[sub_resource type="Theme" id="Theme_70d11"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_3li8b")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_qu4a1")
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_qu4a1"]
 radius = 0.9989629
 
@@ -96,6 +106,26 @@ layout_mode = 2
 layout_mode = 2
 text = "PLACEHOLDER"
 script = ExtResource("5_qu4a1")
+
+[node name="Tooltip" type="Label" parent="UI" unique_id=1645969908]
+visible = false
+layout_mode = 0
+offset_left = 570.0
+offset_top = 614.0
+offset_right = 691.0
+offset_bottom = 637.0
+text = "Press E to clean"
+
+[node name="MopProgress" type="ProgressBar" parent="UI" unique_id=1328388539]
+visible = false
+layout_mode = 0
+offset_left = 568.0
+offset_top = 635.0
+offset_right = 738.0
+offset_bottom = 662.0
+theme = SubResource("Theme_70d11")
+max_value = 1.0
+show_percentage = false
 
 [node name="Area3D" type="Area3D" parent="." unique_id=2046823731]
 

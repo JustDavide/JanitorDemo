@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bgfdjuhf7oacr" path="res://scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://deu44euh4qkt8" path="res://assets/trash/bunch_of_cans.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bxg0wbwds88vq" path="res://assets/trash/puddle.tscn" id="3_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u77a"]
 sky_top_color = Color(0, 0.3943951, 0.75831825, 1)
@@ -102,3 +103,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9643869, 0.70289195, 1.8932
 
 [node name="BunchOfCans4" parent="." unique_id=429383984 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8361015, 0.70289195, -4.661441)
+
+[node name="Puddle" parent="." unique_id=369697662 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.590452, 0.5, 5.4101534)

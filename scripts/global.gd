@@ -1,6 +1,7 @@
 extends Node
 
 var debug
+var playerUI
 
 var cleaned : int = 0
 var totalTrash : int = 0

@@ -11,6 +11,7 @@ const RAYLENGHT = 5
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Global.playerUI = $UI
 	
 func _unhandled_input(_event: InputEvent) -> void:
 	
@@ -40,10 +41,9 @@ func interact():
 	var objs=$Area3D.get_overlapping_areas()
 	for obj in objs:
 		obj=obj.get_parent()
-		print(obj)
 		if obj.has_method("clean"):
-			print('if')
 			obj.clean()
+			
 
 func _physics_process(delta: float) -> void:
 	# Debug Values just in case

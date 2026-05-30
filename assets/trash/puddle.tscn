@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bxg0wbwds88vq"]
+
+[ext_resource type="Script" uid="uid://b7a8p5685mwy1" path="res://scripts/Puddles.gd" id="1_068ss"]
+[ext_resource type="PackedScene" uid="uid://c5bwjr0jbdhqd" path="res://assets/models/Puddle.fbx" id="1_day5a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_068ss"]
+size = Vector3(1.029602, 0.40679932, 1.1498413)
+
+[node name="Puddle" type="Node3D" unique_id=369697662]
+script = ExtResource("1_068ss")
+
+[node name="Puddle" parent="." unique_id=1063905784 instance=ExtResource("1_day5a")]
+transform = Transform3D(0.18313417, 0, 0, 0, 1, 0, 0, 0, 0.18554108, 0, 0.025059938, 0)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=334766939]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=13998190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014801025, 0.007659912, 0.017730713)
+shape = SubResource("BoxShape3D_068ss")
