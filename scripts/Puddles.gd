@@ -1,10 +1,16 @@
 extends Node3D
 
+# Input Mapping
+var interact = InputMap.get_action_description("Interact")
+
+# UI Elements
 var tooltip
 var mopBar
+
+# Vars
 var playerNear = false
 var holdTime = 0.0
-const HOLDDURATION = 4.5 # seconds
+const HOLDDURATION = 4.5 # will have to lower, but idk. 
 
 func _ready() -> void:
 	Global.registerTrash()
@@ -13,17 +19,18 @@ func _ready() -> void:
 	$Area3D.body_entered.connect(_on_body_entered)
 	$Area3D.body_exited.connect(_on_body_exited)
 	
+	
 func _on_body_entered(body: Node3D):
 	if body.name == "Player":
 		playerNear = true
-		tooltip.text = "Hold E (4.5s) to clean"
+		tooltip.text = "Hold %d (%ds) to clean" % [interact, HOLDDURATION]
 		tooltip.visible = true
 
 func _on_body_exited(body: Node3D):
 	if body.name == "Player":
 		playerNear = false
 		tooltip.visible = false
-		tooltip.text = "Press E to clean"
+		tooltip.text = "Press %d to clean" % interact
 		
 func _process(delta: float) -> void:
 	if playerNear and Input.is_action_pressed("Interact"):
@@ -31,7 +38,6 @@ func _process(delta: float) -> void:
 			mopBar.visible = true
 		
 		holdTime += delta
-	
 		mopBar.value = holdTime / HOLDDURATION
 		
 		if holdTime >= HOLDDURATION:

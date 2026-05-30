@@ -14,7 +14,6 @@ func _ready():
 	Global.playerUI = $UI
 	
 func _unhandled_input(_event: InputEvent) -> void:
-	
 	# Mouse capture switch (until we get a pause menu or smth)
 	if Input.is_action_just_pressed("Escape"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
