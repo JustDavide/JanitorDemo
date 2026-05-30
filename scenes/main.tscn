@@ -91,17 +91,14 @@ SENS = 0.001
 [node name="DebugCamera" type="Camera3D" parent="." unique_id=1474081982]
 transform = Transform3D(-0.99922913, -0.039173663, 0.002601901, -1.2880135e-08, 0.06627392, 0.99780154, -0.03925994, 0.9970322, -0.06622282, 1.4422541, 19.922709, 0)
 
-[node name="BunchOfCans2" parent="." unique_id=24624919 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43894005, 0.70289147, -4.164132)
+[node name="BunchOfCans" parent="." unique_id=24624919 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.96184, 0.70289195, 1.162344)
 
-[node name="BunchOfCans3" parent="." unique_id=439961585 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43894005, 0.70289147, 10.887475)
+[node name="BunchOfCans2" parent="." unique_id=120639269 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5256305, 0.70289195, 5.5621433)
 
-[node name="BunchOfCans4" parent="." unique_id=1681616970 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0228615, 0.70289147, -1.8786173)
+[node name="BunchOfCans3" parent="." unique_id=569887194 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9643869, 0.70289195, 1.8932772)
 
-[node name="BunchOfCans5" parent="." unique_id=1251645429 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4316826, 0.70289147, 1.272049)
-
-[node name="BunchOfCans6" parent="." unique_id=1003491026 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.071334, 0.70289147, 8.170263)
+[node name="BunchOfCans4" parent="." unique_id=429383984 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8361015, 0.70289195, -4.661441)
