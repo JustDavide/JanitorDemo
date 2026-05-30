@@ -23,14 +23,14 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D):
 	if body.name == "Player":
 		playerNear = true
-		tooltip.text = "Hold %d (%ds) to clean" % [interact, HOLDDURATION]
+		tooltip.text = "Hold %s (%.1fs) to clean" % [interact, HOLDDURATION]
 		tooltip.visible = true
 
 func _on_body_exited(body: Node3D):
 	if body.name == "Player":
 		playerNear = false
 		tooltip.visible = false
-		tooltip.text = "Press %d to clean" % interact
+		tooltip.text = "Press %s to clean" % interact
 		
 func _process(delta: float) -> void:
 	if playerNear and Input.is_action_pressed("Interact"):
@@ -48,9 +48,6 @@ func _process(delta: float) -> void:
 		holdTime = 0.0
 		mopBar.value = 0
 
-# Method name changed so that I can execute it here instead
-# of doing it in the character controller (will change the whole system eventually)
-# and make a proper quest/mopping/todolist system
 func mop():
 	if mopBar.visible: # Failsafe
 		mopBar.visible = false

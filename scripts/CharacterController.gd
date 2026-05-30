@@ -18,14 +18,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.is_action_just_pressed("M1"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		
-	
-func interact():
-	var objs=$Area3D.get_overlapping_areas()
-	for obj in objs:
-		obj=obj.get_parent()
-		if obj.has_method("clean"):
-			obj.clean()
 			
 
 func _physics_process(delta: float) -> void:
@@ -38,10 +30,6 @@ func _physics_process(delta: float) -> void:
 	# Don't really need gravity but I'll just keep it rn
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 1.2
-
-	if Input.is_action_just_pressed("Interact"):
-		print('input')
-		interact()
 
 	var input_dir = Input.get_vector("Left", "Right", "Forwards", "Backwards")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
