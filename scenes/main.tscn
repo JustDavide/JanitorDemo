@@ -93,3 +93,15 @@ transform = Transform3D(-0.99922913, -0.039173663, 0.002601901, -1.2880135e-08, 
 
 [node name="BunchOfCans2" parent="." unique_id=24624919 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43894005, 0.70289147, -4.164132)
+
+[node name="BunchOfCans3" parent="." unique_id=439961585 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43894005, 0.70289147, 10.887475)
+
+[node name="BunchOfCans4" parent="." unique_id=1681616970 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0228615, 0.70289147, -1.8786173)
+
+[node name="BunchOfCans5" parent="." unique_id=1251645429 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4316826, 0.70289147, 1.272049)
+
+[node name="BunchOfCans6" parent="." unique_id=1003491026 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.071334, 0.70289147, 8.170263)

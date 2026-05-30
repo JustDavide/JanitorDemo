@@ -10,6 +10,9 @@ metallic = 1.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwavp"]
 albedo_color = Color(0, 1, 1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwavp"]
+size = Vector3(0.789917, 0.40679932, 0.99694824)
+
 [node name="BunchOfCans" type="Node3D" unique_id=24624919]
 script = ExtResource("1_xwavp")
 
@@ -111,3 +114,9 @@ radius = 0.5234375
 height = 27.828354
 sides = 20
 material = SubResource("StandardMaterial3D_xwavp")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1458455519]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2042238174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105041504, 0.007659912, 0.094177246)
+shape = SubResource("BoxShape3D_xwavp")

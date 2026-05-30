@@ -36,6 +36,14 @@ func _unhandled_input(_event: InputEvent) -> void:
 		#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-95), deg_to_rad(95))
 		
 	
+func interact():
+	var objs=$Area3D.get_overlapping_areas()
+	for obj in objs:
+		obj=obj.get_parent()
+		print(obj)
+		if obj.has_method("clean"):
+			print('if')
+			obj.clean()
 
 func _physics_process(delta: float) -> void:
 	# Debug Values just in case
@@ -47,6 +55,11 @@ func _physics_process(delta: float) -> void:
 	# Don't really need gravity but I'll just keep it rn
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 1.2
+
+	if Input.is_action_just_pressed("Interact"):
+		print('input')
+		interact()
+
 
 	# Don't need jumping
 	#if Input.is_action_just_pressed("Jump") and is_on_floor():
