@@ -6,4 +6,3 @@ func _ready() -> void:
 	
 func on_count_changed(cleaned: int, total: int):
 	text = "Cleaned: %d/%d" % [cleaned, total]
-	

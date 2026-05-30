@@ -81,9 +81,9 @@ layout_mode = 2
 [node name="CleanedPanel" type="PanelContainer" parent="UI" unique_id=789117837]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 670.0
-offset_right = 210.0
-offset_bottom = 710.0
+offset_top = 680.0
+offset_right = 125.0
+offset_bottom = 707.0
 theme = SubResource("Theme_qu4a1")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/CleanedPanel" unique_id=1635709921]
