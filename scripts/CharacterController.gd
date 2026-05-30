@@ -7,7 +7,6 @@ const RAYLENGHT = 5
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-@onready var debugCamera = $"../DebugCamera"
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -19,21 +18,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.is_action_just_pressed("M1"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
-	# Switch Debug camera
-	if Input.is_action_just_pressed("SwitchCamera"):
-		if get_viewport().get_camera_3d() == camera:
-			debugCamera.current = true
-		else:
-			camera.current = true
-		
-	# Old mouse movement system. Don't need it anymore
-	#if event is InputEventMouseMotion:
-		#if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
-			#return
-		#head.rotate_y(-event.relative.x * SENS)
-		#camera.rotate_x(-event.relative.y * SENS)
-		#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-95), deg_to_rad(95))
 		
 	
 func interact():
@@ -59,20 +43,6 @@ func _physics_process(delta: float) -> void:
 		print('input')
 		interact()
 
-
-	# Don't need jumping
-	#if Input.is_action_just_pressed("Jump") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-
-	
-	# Don't need running
-	#if (Input.is_action_pressed("Run") and is_on_floor()) and SPEED < 8:
-		#SPEED += 0.750
-		#if SPEED > 8:
-			#SPEED = 8
-	#if Input.is_action_just_released("Run"):
-		#SPEED = 5.0	
-
 	var input_dir = Input.get_vector("Left", "Right", "Forwards", "Backwards")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -83,5 +53,3 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0.0
 
 	move_and_slide()
-		
-		

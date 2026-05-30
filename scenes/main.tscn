@@ -57,18 +57,18 @@ radius = 0.22607422
 height = 3.8215027
 sides = 20
 
-[node name="Penis" type="CSGBox3D" parent="." unique_id=1529163051]
+[node name="BalledEntrance" type="CSGBox3D" parent="." unique_id=1529163051]
 transform = Transform3D(6.7188196, 0, 0, 0, 2.9081683, 0, 0, 0, 1, -0.46483052, 5.1471486, 25.135918)
 use_collision = true
 size = Vector3(1.6185913, 3.1641235, 1)
 material = SubResource("StandardMaterial3D_bo1nx")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Penis" unique_id=1028493271]
+[node name="CSGBox3D" type="CSGBox3D" parent="BalledEntrance" unique_id=1028493271]
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 1, 0.05267333, -0.89820766, 0)
 operation = 2
 size = Vector3(0.5506592, 1.4111938, 1)
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Penis" unique_id=1224177889]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="BalledEntrance" unique_id=1224177889]
 transform = Transform3D(0.62628615, 0, 0, 0, 1.1134453, 0, 0, 0, 3.840881, 0.041620165, -0.3025837, -0.44552326)
 operation = 2
 radius = 0.6022808
@@ -88,9 +88,6 @@ sides = 7
 [node name="Player" parent="." unique_id=1009793537 instance=ExtResource("1_jjgbg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1307507, 1.5, 2.9379852)
 SENS = 0.001
-
-[node name="DebugCamera" type="Camera3D" parent="." unique_id=1474081982]
-transform = Transform3D(-0.99922913, -0.039173663, 0.002601901, -1.2880135e-08, 0.06627392, 0.99780154, -0.03925994, 0.9970322, -0.06622282, 1.4422541, 19.922709, 0)
 
 [node name="BunchOfCans" parent="." unique_id=24624919 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.96184, 0.70289195, 1.162344)
