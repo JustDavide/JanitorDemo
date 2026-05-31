@@ -2,7 +2,7 @@ extends Node3D
 
 # Input Mapping
 var interact = InputMap.get_action_description("Interact")
-var ogScale=scale
+@onready var ogScale=$Puddle.scale
 # UI Elements
 var tooltip
 var mopBar
@@ -39,8 +39,8 @@ func _process(delta: float) -> void:
 		
 		holdTime += delta
 		mopBar.value = holdTime / HOLDDURATION
-		scale=ogScale*(1.01-mopBar.value)
-		$Area3D/CollisionShape3D.scale=ogScale/scale
+		$Puddle.scale=ogScale*(1.01-mopBar.value)
+		#$Area3D/CollisionShape3D.scale=ogScale/scale
 		
 		if holdTime >= HOLDDURATION:
 			mop()
