@@ -2,7 +2,7 @@ extends Node3D
 
 # Input Mapping
 var interact = InputMap.get_action_description("Interact")
-
+var ogScale=scale
 # UI Elements
 var tooltip
 var mopBar
@@ -16,18 +16,18 @@ func _ready() -> void:
 	Global.registerTrash()
 	tooltip = Global.playerUI.get_node("Tooltip")
 	mopBar = Global.playerUI.get_node("MopProgress")
-	$Area3D.body_entered.connect(_on_body_entered)
-	$Area3D.body_exited.connect(_on_body_exited)
+	$Area3D.area_entered.connect(_on_area_entered)
+	$Area3D.area_exited.connect(_on_area_exited)
 	
 	
-func _on_body_entered(body: Node3D):
-	if body.name == "Player":
+func _on_area_entered(area: Node3D):
+	if area.get_parent().name == "Player":
 		playerNear = true
 		tooltip.text = "Hold %s (%.1fs) to clean" % [interact, HOLDDURATION]
 		tooltip.visible = true
 
-func _on_body_exited(body: Node3D):
-	if body.name == "Player":
+func _on_area_exited(area: Node3D):
+	if area.get_parent().name == "Player":
 		playerNear = false
 		tooltip.visible = false
 		tooltip.text = "Press %s to clean" % interact
@@ -39,14 +39,16 @@ func _process(delta: float) -> void:
 		
 		holdTime += delta
 		mopBar.value = holdTime / HOLDDURATION
+		scale=ogScale*(1.01-mopBar.value)
+		$Area3D/CollisionShape3D.scale=ogScale/scale
 		
 		if holdTime >= HOLDDURATION:
 			mop()
 	else:
 		if mopBar.visible:
 			mopBar.visible = false
-		holdTime = 0.0
-		mopBar.value = 0
+		#holdTime = 0.0
+		#mopBar.value = 0
 
 func mop():
 	if mopBar.visible: # Failsafe
