@@ -29,8 +29,8 @@ func _on_area_entered(area: Node3D):
 func _on_area_exited(area: Node3D):
 	if area.get_parent().name == "Player":
 		playerNear = false
-		tooltip.visible = false
-		tooltip.text = "Press %s to clean" % interact
+		#tooltip.visible = false
+		#tooltip.text = "Press %s to clean" % interact
 		
 func _process(delta: float) -> void:
 	if playerNear and Input.is_action_pressed("Interact"):
