@@ -5,24 +5,24 @@ var tooltip
 func _ready() -> void:
 	Global.registerTrash()
 	tooltip = Global.playerUI.get_node("Tooltip")
-	$Area3D.body_entered.connect(_on_body_entered)
-	$Area3D.body_exited.connect(_on_body_exited)
+	$Area3D.area_entered.connect(_on_area_entered)
+	$Area3D.area_exited.connect(_on_area_exited)
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Interact"):
 		clean()
 	
-func _on_body_entered(body: Node3D):
-	if body.name == "Player":
+func _on_area_entered(area: Node3D):
+	if area.get_parent().name == "Player":
 		tooltip.visible = true
-		
-func _on_body_exited(body: Node3D):
-	if body.name == "Player":
+	
+func _on_area_exited(area: Node3D):
+	if area.get_parent().name == "Player":
 		tooltip.visible = false
-
+	
 func clean():
-	var bodies = $Area3D.get_overlapping_bodies()
-	for body in bodies:
-		if body.name == "Player":
+	var areas = $Area3D.get_overlapping_areas()
+	for area in areas:
+		if area.get_parent().name == "Player":
 			Global.addCleaned()
 			queue_free()

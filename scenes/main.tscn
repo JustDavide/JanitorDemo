@@ -101,5 +101,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9643869, 0.70289195, 1.8932
 [node name="BunchOfCans4" parent="." unique_id=429383984 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8361015, 0.70289195, -4.661441)
 
+[node name="Puddle2" parent="." unique_id=1834099406 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8556042, 0.4999981, 9.031061)
+
 [node name="Puddle" parent="." unique_id=369697662 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.590452, 0.5, 5.4101534)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.906752, 0.5000019, 5.4607315)

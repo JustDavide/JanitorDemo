@@ -2,15 +2,16 @@ extends Node3D
 
 # Input Mapping
 var interact = InputMap.get_action_description("Interact")
-@onready var ogScale=$Puddle.scale
+
 # UI Elements
 var tooltip
 var mopBar
 
-# Vars
+# Other
 var playerNear = false
 var holdTime = 0.0
 const HOLDDURATION = 4.5 # will have to lower, but idk. 
+@onready var ogScale=$Puddle.scale
 
 func _ready() -> void:
 	Global.registerTrash()
@@ -18,7 +19,6 @@ func _ready() -> void:
 	mopBar = Global.playerUI.get_node("MopProgress")
 	$Area3D.area_entered.connect(_on_area_entered)
 	$Area3D.area_exited.connect(_on_area_exited)
-	
 	
 func _on_area_entered(area: Node3D):
 	if area.get_parent().name == "Player":
