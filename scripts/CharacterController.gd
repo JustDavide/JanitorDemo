@@ -20,13 +20,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			
 
-	
-
 func _physics_process(delta: float) -> void:
-	var overlap = $Area3D.get_overlapping_areas()
-	if overlap:
-		$UI/Tooltip.visible=true
-	else:$UI/Tooltip.visible=false
 	# Debug Values just in case
 	Global.debug.add_property("Current X Velocity", "%.2f" % velocity.x, 1)
 	Global.debug.add_property("Current Z Velocity", "%.2f" % velocity.z, 2)

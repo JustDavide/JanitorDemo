@@ -1,12 +1,12 @@
 extends Node3D
 
 var tooltip
-var interact = InputMap.get_action_description("Interact")
+
 func _ready() -> void:
 	Global.registerTrash()
 	tooltip = Global.playerUI.get_node("Tooltip")
 	$Area3D.area_entered.connect(_on_area_entered)
-	#$Area3D.area_exited.connect(_on_area_exited)
+	$Area3D.area_exited.connect(_on_area_exited)
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Interact"):
@@ -14,12 +14,11 @@ func _process(_delta: float) -> void:
 	
 func _on_area_entered(area: Node3D):
 	if area.get_parent().name == "Player":
-		tooltip.text="Press %s to clean" % interact
 		tooltip.visible = true
 	
-#func _on_area_exited(area: Node3D):
-	#if area.get_parent().name == "Player":
-		#tooltip.visible = false
+func _on_area_exited(area: Node3D):
+	if area.get_parent().name == "Player":
+		tooltip.visible = false
 	
 func clean():
 	var areas = $Area3D.get_overlapping_areas()
