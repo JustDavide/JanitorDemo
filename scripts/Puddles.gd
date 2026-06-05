@@ -30,7 +30,6 @@ func _on_area_exited(area: Node3D):
 	if area.get_parent().name == "Player":
 		playerNear = false
 		tooltip.visible = false
-		tooltip.text = "Press %s to clean" % interact
 		
 func _process(delta: float) -> void:
 	if playerNear and Input.is_action_pressed("Interact"):
@@ -47,12 +46,14 @@ func _process(delta: float) -> void:
 	else:
 		if mopBar.visible:
 			mopBar.visible = false
-		#holdTime = 0.0
-		#mopBar.value = 0
+		$Puddle.scale = ogScale
+		holdTime = 0.0
+		mopBar.value = 0
+		# Reset values and scale on player leaving the area/stop holding
 
 func mop():
 	if mopBar.visible: # Failsafe
 		mopBar.visible = false
 		mopBar.value = 0
-	Global.addCleaned()
+	Global.addCleaned(1)
 	queue_free()
