@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cd0dmr7g0v33h"]
+
+[ext_resource type="Script" uid="uid://3cbjehyby5e5" path="res://scenes/roomba.gd" id="1_fup5a"]
+[ext_resource type="PackedScene" uid="uid://c1m4sl4e47q80" path="res://assets/models/untitled.glb" id="1_kfvli"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fup5a"]
+height = 0.27392578
+
+[node name="roomba" type="CharacterBody3D" unique_id=1964757973]
+script = ExtResource("1_fup5a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1729385687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14160156, 0)
+shape = SubResource("CylinderShape3D_fup5a")
+
+[node name="model" parent="." unique_id=311152143 instance=ExtResource("1_kfvli")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.15, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1912296097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+target_position = Vector3(5, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Timer" type="Timer" parent="." unique_id=36085364]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
