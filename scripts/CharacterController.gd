@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var SPEED: float = 5.0
+var SPEED: float = 10.0
 const JUMP_VELOCITY: float = 5.6
 const RAYLENGHT: float = 5
 @export var SENS: float = 0.03
@@ -58,10 +58,16 @@ func _physics_process(delta: float) -> void:
 	var input_dir: Vector2 = Input.get_vector("Left", "Right", "Forwards", "Backwards")
 	var direction: Vector3 = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = lerp(velocity.x, direction.x * SPEED, delta*5.0)
+		velocity.z = lerp(velocity.z, direction.z * SPEED, delta*5.0)
 	else:
-		velocity.x = 0.0
-		velocity.z = 0.0
+		velocity.x = move_toward(velocity.x, 0.0, delta*10.0)
+		velocity.z = move_toward(velocity.z, 0.0, delta*10.0)
+	
+	# Camera smooth
+	var head_height : float = 0.762
+	var head_target_pos = global_position; head_target_pos.y += head_height
+	# apply
+	head.global_position = lerp(head.global_position, head_target_pos, delta*10.0)
 
 	move_and_slide()
