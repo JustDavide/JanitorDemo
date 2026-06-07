@@ -5,8 +5,8 @@ var interact = InputMap.get_action_description("Interact")
 
 func _ready() -> void:
 	tooltip = Global.playerUI.get_node("Tooltip")
-	$Area3D.area_entered.connect(_on_area_entered)
-	$Area3D.area_exited.connect(_on_area_exited)
+	#$Area3D.area_entered.connect(_on_area_entered)
+	#$Area3D.area_exited.connect(_on_area_exited)
 	
 func _on_area_entered(area: Node3D):
 	if area.get_parent().name == "Player":
@@ -16,6 +16,10 @@ func _on_area_entered(area: Node3D):
 func _on_area_exited(area: Node3D):
 	if area.get_parent().name == "Player":
 		tooltip.visible = false
+
+func show_info() -> void:
+	tooltip.text = "Press %s to dump all of your trash" % interact
+	tooltip.visible = true
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Interact"):
