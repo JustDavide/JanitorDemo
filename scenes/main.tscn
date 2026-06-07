@@ -100,6 +100,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5256305, 0.70289195, 5.562
 [node name="BunchOfCans3" parent="." unique_id=569887194 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9643869, 0.70289195, 1.8932772)
 
+[node name="BunchOfCans3" parent="BunchOfCans3" unique_id=278509436 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.223, 0, 4.079)
+
 [node name="BunchOfCans4" parent="." unique_id=429383984 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8361015, 0.70289195, -4.661441)
 

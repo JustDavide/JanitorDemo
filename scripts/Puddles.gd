@@ -23,14 +23,18 @@ func _ready() -> void:
 func _on_area_entered(area: Node3D):
 	if area.get_parent().name == "Player":
 		playerNear = true
-		tooltip.text = "Hold %s (%.1fs) to clean" % [interact, HOLDDURATION]
-		tooltip.visible = true
+		#tooltip.text = "Hold %s (%.1fs) to clean" % [interact, HOLDDURATION]
+		#tooltip.visible = true
 
 func _on_area_exited(area: Node3D):
 	if area.get_parent().name == "Player":
 		playerNear = false
-		tooltip.visible = false
-		
+		#tooltip.visible = false
+
+func show_info() -> void:
+	tooltip.text = "Hold %s (%.1fs) to clean" % [interact, HOLDDURATION]
+	tooltip.visible = true
+
 func _process(delta: float) -> void:
 	if playerNear and Input.is_action_pressed("Interact"):
 		if not mopBar.visible:

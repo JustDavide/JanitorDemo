@@ -9,8 +9,8 @@ func _ready() -> void:
 	tooltip = Global.playerUI.get_node("Tooltip")
 	maxInvLabel = Global.playerUI.get_node("MaxInv")
 	maxInvLabel.modulate.a = 0.0
-	$Area3D.area_entered.connect(_on_area_entered)
-	$Area3D.area_exited.connect(_on_area_exited)
+	#$Area3D.area_entered.connect(_on_area_entered)
+	#$Area3D.area_exited.connect(_on_area_exited)
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Interact"):
@@ -24,6 +24,10 @@ func _on_area_entered(area: Node3D):
 func _on_area_exited(area: Node3D):
 	if area.get_parent().name == "Player":
 		tooltip.visible = false
+
+func show_info() -> void:
+	tooltip.text = "Press %s to clean" % interact
+	tooltip.visible = true
 
 func hold():
 	var areas = $Area3D.get_overlapping_areas()

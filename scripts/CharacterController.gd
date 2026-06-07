@@ -1,17 +1,29 @@
 extends CharacterBody3D
 
-var SPEED = 5.0
-const JUMP_VELOCITY = 5.6
-const RAYLENGHT = 5
-@export var SENS = 0.03
+var SPEED: float = 5.0
+const JUMP_VELOCITY: float = 5.6
+const RAYLENGHT: float = 5
+@export var SENS: float = 0.03
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var interaction_area: Area3D = $Area3D
+
+var interactable_objects: Array[Node3D] = []
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Global.playerUI = $UI
-	
+	interaction_area.area_entered.connect(_on_area_entered)
+	interaction_area.area_exited.connect(_on_area_exited)
+
+func _on_area_entered(area: Node3D):
+	if area.get_parent().has_method("show_info"):
+		interactable_objects.append(area)
+
+func _on_area_exited(area: Node3D):
+	interactable_objects.erase(area)
+
 func _unhandled_input(_event: InputEvent) -> void:
 	# Mouse capture switch (until we get a pause menu or smth)
 	if Input.is_action_just_pressed("Escape"):
@@ -19,6 +31,18 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("M1"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			
+
+func _process(_delta: float) -> void:
+	if not interactable_objects.is_empty():
+		var closest_distance: float = INF
+		var closest_object: Node3D = null
+		for object in interactable_objects:
+			if object.global_position.distance_squared_to(global_position) < closest_distance:
+				closest_distance = object.global_position.distance_squared_to(global_position)
+				closest_object = object
+		closest_object.get_parent().show_info()
+	else:
+		Global.hide_info()
 
 func _physics_process(delta: float) -> void:
 	# Debug Values just in case
@@ -31,8 +55,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 1.2
 
-	var input_dir = Input.get_vector("Left", "Right", "Forwards", "Backwards")
-	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var input_dir: Vector2 = Input.get_vector("Left", "Right", "Forwards", "Backwards")
+	var direction: Vector3 = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
