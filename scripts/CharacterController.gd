@@ -39,5 +39,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, delta*10.0)
 		velocity.z = move_toward(velocity.z, 0.0, delta*10.0)
+	
+	# Camera smooth
+	var head_height : float = 0.762
+	var head_target_pos = global_position; head_target_pos.y += head_height
+	# apply
+	head.global_position = lerp(head.global_position, head_target_pos, delta*10.0)
 
 	move_and_slide()
