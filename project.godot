@@ -12,7 +12,7 @@ config_version=5
 
 config/name="JanitorProto"
 run/main_scene="uid://1l04mvg80ge5"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
 
@@ -95,3 +95,4 @@ SwitchCamera={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+lights_and_shadows/directional_shadow/size=512

@@ -14,11 +14,16 @@ ground_horizon_color = Color(0.4893413, 0.58505285, 0.6735428, 1)
 
 [sub_resource type="Sky" id="Sky_jjgbg"]
 sky_material = SubResource("ProceduralSkyMaterial_7u77a")
+radiance_size = 0
 
 [sub_resource type="Environment" id="Environment_bo1nx"]
 background_mode = 2
 sky = SubResource("Sky_jjgbg")
-tonemap_mode = 2
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 2.05
+tonemap_white = 7.95
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7u77a"]
 albedo_color = Color(0.24840015, 0.24840018, 0.24840015, 1)
@@ -38,8 +43,19 @@ albedo_color = Color(1.9492954e-06, 0.59182423, 9.62615e-07, 1)
 environment = SubResource("Environment_bo1nx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=405938976]
-transform = Transform3D(0.1310133, -0.20904945, 0.9690892, 0.009248661, 0.97773, 0.20966303, -0.9913374, -0.018505877, 0.13002908, 0, 13.999184, 0)
+transform = Transform3D(-0.39079422, -0.1896945, 0.90071964, 0.008532659, 0.977746, 0.20961857, -0.9204384, 0.08960326, -0.38047892, 0, 13.999184, 0)
+light_energy = 1.255
 shadow_enabled = true
+shadow_normal_bias = 5.1
+directional_shadow_mode = 1
+directional_shadow_blend_splits = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=980284684]
+transform = Transform3D(0.09584575, -0.24080814, -0.96582866, 0, 0.9702957, -0.2419219, 0.99539614, 0.023187188, 0.09299873, 0, 13.999184, 0)
+light_energy = 0.235
+shadow_normal_bias = 5.1
+directional_shadow_mode = 1
+directional_shadow_blend_splits = true
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=1764774185]
 transform = Transform3D(101.88585, 0, 0, 0, 1, 0, 0, 0, 38.702435, 0, 0, 7.347093)
