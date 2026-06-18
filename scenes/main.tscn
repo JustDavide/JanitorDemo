@@ -109,18 +109,28 @@ SENS = 0.001
 
 [node name="BunchOfCans" parent="." unique_id=24624919 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.96184, 0.70289195, 1.162344)
+holdDuration = 0.0
+mustHold = true
 
 [node name="BunchOfCans2" parent="." unique_id=120639269 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5256305, 0.70289195, 5.5621433)
+holdDuration = 0.0
+mustHold = true
 
 [node name="BunchOfCans3" parent="." unique_id=569887194 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9643869, 0.70289195, 1.8932772)
-
-[node name="BunchOfCans3" parent="BunchOfCans3" unique_id=278509436 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.223, 0, 4.079)
+holdDuration = 0.0
+mustHold = true
 
 [node name="BunchOfCans4" parent="." unique_id=429383984 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8361015, 0.70289195, -4.661441)
+holdDuration = 0.0
+mustHold = true
+
+[node name="BunchOfCans5" parent="." unique_id=278509436 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2586126, 0.70289195, 8.752171)
+holdDuration = 0.0
+mustHold = true
 
 [node name="Puddle2" parent="." unique_id=1834099406 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8556042, 0.4999981, 9.031061)

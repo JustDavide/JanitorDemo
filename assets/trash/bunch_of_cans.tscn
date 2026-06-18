@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://deu44euh4qkt8"]
 
 [ext_resource type="Material" uid="uid://sj0ek3878nnc" path="res://assets/materials/can_mat.tres" id="1_uafox"]
-[ext_resource type="Script" uid="uid://cvmvfy7pmoc8v" path="res://scripts/Cans.gd" id="1_xwavp"]
+[ext_resource type="Script" uid="uid://el4ht6xk3xh1" path="res://scripts/Cleanable.gd" id="1_xwavp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uafox"]
 albedo_color = Color(0, 0.68497396, 0.74515253, 1)
@@ -13,39 +13,40 @@ albedo_color = Color(0, 1, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xwavp"]
 size = Vector3(0.789917, 0.40679932, 0.99694824)
 
-[node name="BunchOfCans" type="Node3D" unique_id=24624919]
+[node name="Cleanable" type="Node3D" unique_id=157609779]
 script = ExtResource("1_xwavp")
+metadata/_custom_type_script = "uid://el4ht6xk3xh1"
 
-[node name="CANS" type="CSGCombiner3D" parent="." unique_id=969489994]
+[node name="Cans" type="CSGCombiner3D" parent="." unique_id=969489994]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 use_collision = true
 collision_layer = 2
 collision_mask = 2
 
-[node name="Can4" type="CSGCylinder3D" parent="CANS" unique_id=1485812008]
+[node name="Can4" type="CSGCylinder3D" parent="Cans" unique_id=1485812008]
 transform = Transform3D(0.34989864, -0.30876964, -0.09493321, 0.14699368, 0.08192646, 0.41912332, -0.20692879, -0.46390545, 0.1372042, -0.5002403, 0, -0.19)
 sides = 20
 material = ExtResource("1_uafox")
 
-[node name="Tab" type="CSGCylinder3D" parent="CANS/Can4" unique_id=2088094288]
+[node name="Tab" type="CSGCylinder3D" parent="Cans/Can4" unique_id=2088094288]
 transform = Transform3D(0.000546747, 0.04713836, 0, -0.0966839, 0.0002665616, 0, 0, 0, 0.55105096, 0, 0.9963355, -0.15592404)
 height = 2.770752
 material = SubResource("StandardMaterial3D_uafox")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CANS/Can4" unique_id=160889588]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Cans/Can4" unique_id=160889588]
 transform = Transform3D(1.0687698, -1.3969839e-09, 1.4901161e-08, -3.8184226e-08, 0.23091085, 3.7252903e-09, -8.6426735e-07, -5.5879354e-09, 1.0742515, 9.536743e-07, -0.05328846, 7.1525574e-07)
 radius = 0.5234375
 height = 6.4002686
 sides = 20
 material = SubResource("StandardMaterial3D_xwavp")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CANS/Can4" unique_id=929063999]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Cans/Can4" unique_id=929063999]
 transform = Transform3D(1.0687698, -1.3969839e-09, 1.4901161e-08, -3.8184226e-08, 0.23091085, 3.7252903e-09, -8.6426735e-07, -5.5879354e-09, 1.0742515, 1.1324883e-06, -0.015147209, 7.1525574e-07)
 radius = 0.5234375
 height = 8.623749
 sides = 20
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CANS/Can4/CSGCylinder3D2" unique_id=1667144361]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Cans/Can4/CSGCylinder3D2" unique_id=1667144361]
 transform = Transform3D(1.0687698, 3.259629e-09, 0, -4.8428774e-08, 0.23091017, -2.488494e-06, -8.6426735e-07, -1.6763806e-08, 1.0742515, 8.940697e-07, -0.14278793, 1.1920929e-06)
 operation = 2
 radius = 0.5234375
@@ -53,30 +54,30 @@ height = 27.828354
 sides = 20
 material = SubResource("StandardMaterial3D_xwavp")
 
-[node name="Can5" type="CSGCylinder3D" parent="CANS" unique_id=1912509101]
+[node name="Can5" type="CSGCylinder3D" parent="Cans" unique_id=1912509101]
 transform = Transform3D(0.4322681, 0, 0, 0, -0.023685, 0.45071268, 0, -0.5627592, -0.018969264, 0.269, 0, -0.086)
 sides = 20
 material = ExtResource("1_uafox")
 
-[node name="Tab" type="CSGCylinder3D" parent="CANS/Can5" unique_id=152749431]
+[node name="Tab" type="CSGCylinder3D" parent="Cans/Can5" unique_id=152749431]
 transform = Transform3D(0.000546747, 0.04713836, 0, -0.0966839, 0.0002665616, 0, 0, 0, 0.55105096, 0, 0.9963355, -0.15592404)
 height = 2.770752
 material = SubResource("StandardMaterial3D_uafox")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CANS/Can5" unique_id=1592538547]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Cans/Can5" unique_id=1592538547]
 transform = Transform3D(1.0687698, -1.3969839e-09, 1.4901161e-08, -3.8184226e-08, 0.23091085, 3.7252903e-09, -8.6426735e-07, -5.5879354e-09, 1.0742515, 9.536743e-07, -0.05328846, 7.1525574e-07)
 radius = 0.5234375
 height = 6.4002686
 sides = 20
 material = SubResource("StandardMaterial3D_xwavp")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CANS/Can5" unique_id=1584020490]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Cans/Can5" unique_id=1584020490]
 transform = Transform3D(1.0687698, -1.3969839e-09, 1.4901161e-08, -3.8184226e-08, 0.23091085, 3.7252903e-09, -8.6426735e-07, -5.5879354e-09, 1.0742515, 1.1324883e-06, -0.015147209, 7.1525574e-07)
 radius = 0.5234375
 height = 8.623749
 sides = 20
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CANS/Can5/CSGCylinder3D2" unique_id=317632550]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Cans/Can5/CSGCylinder3D2" unique_id=317632550]
 transform = Transform3D(1.0687698, 3.259629e-09, 0, -4.8428774e-08, 0.23091017, -2.488494e-06, -8.6426735e-07, -1.6763806e-08, 1.0742515, 8.940697e-07, -0.14278793, 1.1920929e-06)
 operation = 2
 radius = 0.5234375
@@ -84,30 +85,30 @@ height = 27.828354
 sides = 20
 material = SubResource("StandardMaterial3D_xwavp")
 
-[node name="Can6" type="CSGCylinder3D" parent="CANS" unique_id=91666199]
+[node name="Can6" type="CSGCylinder3D" parent="Cans" unique_id=91666199]
 transform = Transform3D(0.15157422, 0.52732897, 0.010579833, 0, 0.014105572, -0.4509701, -0.40482205, 0.19744356, 0.0039613224, -0.26503676, 0, 0.77778566)
 sides = 20
 material = ExtResource("1_uafox")
 
-[node name="Tab" type="CSGCylinder3D" parent="CANS/Can6" unique_id=671308547]
+[node name="Tab" type="CSGCylinder3D" parent="Cans/Can6" unique_id=671308547]
 transform = Transform3D(0.000546747, 0.04713836, 0, -0.0966839, 0.0002665616, 0, 0, 0, 0.55105096, 0, 0.9963355, -0.15592404)
 height = 2.770752
 material = SubResource("StandardMaterial3D_uafox")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CANS/Can6" unique_id=1511882774]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Cans/Can6" unique_id=1511882774]
 transform = Transform3D(1.0687698, -1.3969839e-09, 1.4901161e-08, -3.8184226e-08, 0.23091085, 3.7252903e-09, -8.6426735e-07, -5.5879354e-09, 1.0742515, 9.536743e-07, -0.05328846, 7.1525574e-07)
 radius = 0.5234375
 height = 6.4002686
 sides = 20
 material = SubResource("StandardMaterial3D_xwavp")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CANS/Can6" unique_id=608169202]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Cans/Can6" unique_id=608169202]
 transform = Transform3D(1.0687698, -1.3969839e-09, 1.4901161e-08, -3.8184226e-08, 0.23091085, 3.7252903e-09, -8.6426735e-07, -5.5879354e-09, 1.0742515, 1.1324883e-06, -0.015147209, 7.1525574e-07)
 radius = 0.5234375
 height = 8.623749
 sides = 20
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CANS/Can6/CSGCylinder3D2" unique_id=1271488180]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Cans/Can6/CSGCylinder3D2" unique_id=1271488180]
 transform = Transform3D(1.0687698, 3.259629e-09, 0, -4.8428774e-08, 0.23091017, -2.488494e-06, -8.6426735e-07, -1.6763806e-08, 1.0742515, 8.940697e-07, -0.14278793, 1.1920929e-06)
 operation = 2
 radius = 0.5234375
